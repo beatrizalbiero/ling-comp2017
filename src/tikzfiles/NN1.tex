@@ -1,0 +1,72 @@
+\begin{figure}[ht!]
+\centering
+
+\scalebox{0.9}{
+\begin{tikzpicture}[auto]
+
+% operations =============================
+
+% input layer
+\node[op] (x3) {$3$};
+\node[op, above=10.5pt of x3] (x2) {$2$};
+\node[op, above=10.5pt of x2] (x1) {$1$};
+\node[op, below=10.5pt of x3] (x4) {$4$};
+
+% hidden layer
+\node[state,  above right= 10pt and 90pt of x3] (h2) {$2$};
+\node[state, below=10.5pt of h2] (h3) {$3$};
+\node[state, above=10.5pt of h2] (h1) {$1$};
+
+% output layer
+\node[output,  right=190pt of x3] (out3) {$3$};
+\node[output,  right=190pt of x1] (out1) {$1$};
+\node[output,  right=190pt of x2] (out2) {$2$};
+\node[output,  right=190pt of x4] (out4) {$4$};
+
+
+% text only
+\node[boxtextonly, above=6.5pt of x1] (entrada) {entrada\\ (\textit{input layer})};
+\node[boxtextonly, above=6.5pt of h1] (escondida) {camada escondida\\ (\textit{hidden layer})};
+\node[boxtextonly, above=6.5pt of out1] (saida) {sáida\\ (\textit{output layer})};
+
+%edges input to hidden
+
+\path[tedge, line width=1.2mm] (x1) -- (h1);
+\path[tedge] (x1) -- (h2);
+\path[tedge] (x1) -- (h3);
+
+\path[tedge] (x2) -- (h1);
+\path[tedge] (x2) -- (h2);
+\path[tedge, line width=1.2mm] (x2) -- (h3);
+
+\path[tedge] (x3) -- (h1);
+\path[tedge, line width=1.2mm] (x3) -- (h2);
+\path[tedge] (x3) -- (h3);
+
+\path[tedge] (x4) -- (h1);
+\path[tedge, line width=1.2mm] (x4) -- (h2);
+\path[tedge] (x4) -- (h3);
+
+% edges hidden to output
+\path[tedge] (h1) -- (out1);
+\path[tedge] (h1) -- (out2);
+\path[tedge,line width=1.2mm] (h1) -- (out3);
+\path[tedge] (h1) -- (out4);
+
+\path[tedge] (h2) -- (out1);
+\path[tedge,line width=1.2mm] (h2) -- (out2);
+\path[tedge] (h2) -- (out3);
+\path[tedge] (h2) -- (out4);
+
+\path[tedge,line width=1.2mm] (h3) -- (out1);
+\path[tedge] (h3) -- (out2);
+\path[tedge] (h3) -- (out3);
+\path[tedge,line width=1.2mm] (h3) -- (out4);
+
+
+
+
+
+\end{tikzpicture}
+} % scalebox
+\end{figure}
