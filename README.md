@@ -4,7 +4,7 @@ I create this presentation together with [Beatriz Albiero](https://github.com/be
 ![alt text](images/cc-logo.png "CC")
 
 
-Licensed under [creative commons](https://github.com/LIAMF-USP/TikzTemplates/blob/master/NeuralNetworks/LICENSE)
+Licensed under [creative commons](https://github.com/felipessalvatore/ling-comp2017/blob/master/LICENSE)
 
 ## Usage
 
