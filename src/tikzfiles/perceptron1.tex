@@ -1,0 +1,33 @@
+\begin{figure}[ht!]
+\centering
+
+\scalebox{1.15}{
+\begin{tikzpicture}[auto]
+%operations=========================
+
+\node[textonly] (x1) {input 1};
+\node[textonly, below=0.01pt of x1] (x11) {$x_1$};
+\node[textonly, below=45pt of x1] (x2) {input 2};
+\node[textonly, below=0.01pt of x2] (x22) {$x_2$};
+\node[textonly, below=45pt of x2] (x3) {input 3};
+\node[textonly, below=0.01pt of x3] (x33) {$x_3$};
+
+\node[gp, right=25pt of x2] (vk) {};
+\node[textonly, right=40pt of vk] (yk) {$output$};
+\node[textonly, above=-9pt of vk] (inv1) {};
+\node[textonly, below=-9pt of vk] (inv2) {};
+\node[boxtextonly, right=40pt of x2] (soma) {soma\\dos\\inputs};
+\node[boxtextonly, right=12pt of soma] (sigmoid) {sigmóide\\da\\soma};
+
+
+
+% edges
+\path[tedge] (x1) edge node[above=1.8pt] {$\theta_{1}$} (vk);
+\path[tedge] (x2) edge node[above=0.2pt] {$\theta_{2}$} (vk);
+\path[tedge] (x3) edge node[above=3pt] {$\theta_{3}$} (vk);
+\path[tedge] (vk) edge node[above=1pt] {}  (yk) ;]
+\path[nedge, draw=red, line width=4pt] (inv1) --  (inv2) ;
+
+\end{tikzpicture}
+} % scalebox
+\end{figure}

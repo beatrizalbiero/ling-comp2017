@@ -7,14 +7,25 @@
 % RNN state cell =============================
 \node[state] (h) {$\vect{h}$};
 \node[op, below=30pt of h] (e) {$\vect{e}$};
-\node[op, above=30pt of h] (yhat) {$\hat{\vect{y}}$};
+\node[output, above=30pt of h] (yhat) {$\hat{\vect{y}}$};
+
+\node[textonly, below right=0.5pt and 0.5pt of e] (inv1) {};
+\node[textonly, above right=0.5pt and 0.5pt of e] (inv2) {};
+\node[textonly, right=40pt of e] (embedding) {camada de embedding};
+
+
 
 
 
 % edges
-\path[tedge] (e) edge node[below right= -4pt] {$\vect{U}$}  (h) ;
+\path[tedge] (e) edge node[below right= -4pt] {}  (h) ;
 \path[tedge] (h) edge [out=-400,in=-320,looseness=8, distance=125pt] node[above right] {$\vect{W}$} (h);
-\path[tedge] (h) edge node[below right = -4pt] {$\vect{V}$} (yhat);
+\path[tedge] (h) edge node[below right = -4pt] {} (yhat);
+
+
+% % info edges
+\draw[orange!120, line width=1mm]  (embedding) to [out=-180,in=0] (inv1);
+\draw[orange!120, line width=1mm] (embedding) to [out=-180,in=0] (inv2);
 
 
 \end{tikzpicture}

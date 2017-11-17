@@ -3,13 +3,13 @@
 
 % operations
 \node[state, minimum size=40pt,#4] (h#3) {$\vect{h}^{#1}$};
-\node[op, minimum size=40pt, above=30pt of h#3] (yhat#3){$\hat{\vect{y}}^{#1}$};
+\node[output, minimum size=40pt, above=30pt of h#3] (yhat#3){$\hat{\vect{y}}^{#1}$};
 \node[op, minimum size=40pt,below=30pt of h#3] (e#3) {$\vect{e}^{#1}$};
 \node[textonly, below=0.1pt of e#3] {{\Large#2}};
 
 % edges
-\path[tedge] (e#3) edge node[below right= -4pt] {$\vect{U}$} (h#3);
-\path[tedge] (h#3) edge node[below right = -4pt] {$\vect{V}$} (yhat#3);
+\path[tedge] (e#3) edge node[below right= -4pt] {} (h#3);
+\path[tedge] (h#3) edge node[below right = -4pt] {} (yhat#3);
 }
 
 \begin{figure}[ht!]

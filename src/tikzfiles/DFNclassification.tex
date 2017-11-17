@@ -9,11 +9,11 @@
 % nodes
 \node[textonly] (vectorx) {$\begin{bmatrix}0.34\\ \vdots \\0.06\end{bmatrix}$};
 \node[textonly, above=1pt of vectorx] (x) {$\vect{x}$};
-\node[textonly, below=1pt of vectorx] (dimension1) {{\small$784\times 1$}};
+\node[textonly, below=1pt of vectorx] (dimension1) {{\small$n\times 1$}};
 \node[op, right=30pt of vectorx] (model) {\textbf{DFN}};
-\node[textonly, right=30pt of model] (vectoryhat) {$\begin{bmatrix}p(y=1| \vect{x};\vect{\theta})\\ \vdots \\p(y=10| \vect{x};\vect{\theta})\end{bmatrix}$};
+\node[textonly, right=30pt of model] (vectoryhat) {$\begin{bmatrix}p(y=1| \vect{x};\vect{\theta})\\ \vdots \\p(y=k| \vect{x};\vect{\theta})\end{bmatrix}$};
 \node[textonly, above=1pt of vectoryhat] (yhat) {$\hat{\vect{y}}$};
-\node[textonly, below=1pt of vectoryhat] (dimension2) {{\small$10\times 1$}};
+\node[textonly, below=1pt of vectoryhat] (dimension2) {{\small$k\times 1$}};
 
 
 

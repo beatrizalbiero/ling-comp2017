@@ -31,7 +31,7 @@ Fazer desenho das coisas abaixo!!!!!!!!!!!!!!!
 \begin{itemize}
 \item \textbf{Regressão} $x_1, \dots, x_N \rightarrow y_1, \dots, y_N$.
 
-\item \textbf{classificação} $x_1, \dots, x_N \rightarrow L_1, \dots, l_N$.
+\item \textbf{classificação} $x_1, \dots, x_N \rightarrow L_1, \dots, L_N$.
 \end{itemize}
 \end{frame}
 
@@ -41,7 +41,6 @@ colocar um plot falso mas verossivel !!!!!!!!!!!!!!!!!!!
 
 
 \begin{frame}{Classificação}
-arrumar flechas !!!!!!!!!!!!!!!!!!!
 \input{tikzfiles/fashionMNIST}
 \end{frame}
 
@@ -49,12 +48,20 @@ arrumar flechas !!!!!!!!!!!!!!!!!!!
 \begin{frame}{Aprendizado por Redes Neurais}
 
 O que sabemos sobre o cérebro:
+\vspace{0.2cm}
 \begin{itemize}
-\visible<2->{\item neurônios em rede}
-\visible<3->{\item  neurônios emitem sinais elétricos (disparam)}
-\visible<4->{\item dendritos e axônios}
+\item neurônios em rede
+\vspace{0.2cm}
+\item  neurônios emitem sinais elétricos (disparam)
+\vspace{0.2cm}
+\item dendritos e axônios
+
 
 \end{itemize}
+
+\includegraphics[width=.50\textwidth]{images/neuron.png}
+\includegraphics[width=.50\textwidth]{images/neuronsnetwork.png}
+
 \end{frame}
 
 
@@ -62,10 +69,14 @@ O que sabemos sobre o cérebro:
 \begin{frame}{Aprendizado por Redes Neurais}
 
 Traduzindo para o modelo de redes neurais artificiais:
+\vspace{0.2cm}
 \begin{itemize}
-\item Energia recebida: \alert{Input}
+\item Energia recebida: \alert{Inputs}
+\vspace{0.2cm}
 \item  Energia enviada: \alert{Output}
+\vspace{0.2cm}
 \item Carga mínima: \alert{Threshold}
+\vspace{0.2cm}
 \item Uma função que recebe um input e emite um output mas leva em consideração um threshold mínimo: \visible<2->{\alert{Função de ativação}}
 
 \end{itemize}
@@ -82,12 +93,26 @@ Traduzindo para o modelo de redes neurais artificiais:
 \input{tikzfiles/ReLU}
 \end{frame}
 
-\begin{frame}[fragile]{perceptron}
+\begin{frame}[fragile]{Perceptron}
+\input{tikzfiles/perceptron1}
+\end{frame}
+
+\begin{frame}[fragile]{Perceptron}
 \input{tikzfiles/perceptron}
 \end{frame}
 
-% As the name suggests, neural-networks are inspired by the brain’s computation mechanism, which consists of computation units called neurons. In the metaphor, a neuron is a computational unit that has scalar inputs and outputs. Each input has an associated weight.The neuron multiplies each input by its weight, and then sums them, applies a non-linear function to the result, and passes it to its output. While the brain metaphor is sexy and intriguing, it is also distracting and cumbersome to manipulate mathematically.
+\begin{frame}[fragile]{Features}
+\textbf{\alert{Features}} são características ou traços do objeto do aprendizado.
+\\
+\visible<2->{\\O aprendizado irá acontecer a partir do \textbf{reconhecimento de padrões} entre \textbf{features}.}
+\\
+\visible<3->{\\Treinaremos o modelo a \textbf{ativar as mesmas unidades simultaneamente} quando diante de um \textbf{determinado padrão}.}
+\end{frame}
 
+\begin{frame}[fragile]{Classificação de imagens}
+
+\input{tikzfiles/hidden_layer}
+\end{frame}
 
 \begin{frame}[fragile]{Rede Neural}
 \input{tikzfiles/NN1}
@@ -97,7 +122,7 @@ Traduzindo para o modelo de redes neurais artificiais:
 \input{tikzfiles/CompGraph}
 \end{frame}
 
-\begin{frame}{Resumo}
+\begin{frame}{Estrutura Completa}
 \input{tikzfiles/ideageral}
 \end{frame}
 
@@ -117,26 +142,24 @@ Problema:
 \begin{itemize}
 \item Aprendizado dos verbos "irregulares" no passado do inglês
 \visible<2->{\item Famílias de verbos irregulares:}
+\vspace{0.2cm}
 	\visible<3->{\begin{itemize}
 	\item “blow–blew, grow–grew, know–knew, throw–threw”
 	\item “bind–bound, find–found, grind–ground, wind–wound”
 	\item “drink–drank, shrink–shrank, sink–sank, stink–stank”}
 	\end{itemize}
+\vspace{0.2cm}
 \visible<4->{\item Chomsky vs Rumelhart e McClelland}
-\visible<5->{\item Aprendizado por Regras (Racionalismo) vs  Aprendizado por Analogias (Conexionismo)}
+\vspace{0.2cm}
+\visible<5->{\item \alert{Regras} (Racionalismo) vs  \alert{Analogias} (Conexionismo)}
 \end{itemize}
 
 \end{frame}
 
 
-\begin{frame}[fragile]{Rede Neural}
-\input{tikzfiles/NN2}
-\end{frame}
-
-
 \begin{frame}[fragile]{On Learning the Past Tenses of English Verbs}
 
-Exemplo de entrada ($x$) e saída ($y$):
+Exemplo de entrada ($\vect{x}$) e saída ($\vect{y}$):
 
 \begin{itemize}
 \item [] $(\vect{x}^{(1)}, \vect{y}^{(1)}) =$ (begin, began).
@@ -148,18 +171,16 @@ Exemplo de entrada ($x$) e saída ($y$):
 \item [] $(\vect{x}^{(7)}, \vect{y}^{(7)}) =$ (hit, hit)
 \item [] $\dots$
 \end{itemize}
-
-
 \end{frame}
 
 
 \begin{frame}[fragile]{On Learning the Past Tenses of English Verbs}
 
-X será uma combinação de traços (features) fonológicos.
+$\vect{x}$ será uma combinação de traços (features) fonológicos.
 
 \begin{table}[]
 \centering
-\caption{Bia, lembre de colocar uma legenda}
+\caption{Categorização de Fonemas em 4 dimensões simples}
 \label{fontable}
 \begin{tabular}{llllllll}
 \hline
@@ -174,23 +195,24 @@ X será uma combinação de traços (features) fonológicos.
  & Low & A & e & I & a/$\alpha$ & W & o \\ \hline
 \end{tabular}
 \end{table}
+
 \end{frame}
+
+\begin{frame}[fragile]{Explicando as features}
+ begin ---> beg, egi, gin ---> beg - int, vowel int (1 dimensão) ; bla bla bla (2 dimensão), ; bla bla bla (3 dimensão), ; bla bla bla (4 dimensão) 
+
+\end{frame}
+
 
 
 \begin{frame}[fragile]{On Learning the Past Tenses of English Verbs}
-\Large{
-\begin{align*}
-  \vect{x} &= \begin{bmatrix}
-                         1\\
-                         0\\
-                         \vdots \\
-                         1\\
-                         \vdots \\
-                         0
-                         \end{bmatrix}\\
-\end{align*}
- }
+\input{tikzfiles/phon_vector}
 \end{frame}
+
+% \begin{frame}[fragile]{Rede Neural com phonemas}
+% COMPLETAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+% \input{tikzfiles/NN2}
+% \end{frame}
 
 
 \begin{frame}[fragile]{On Learning the Past Tenses of English Verbs}
@@ -224,7 +246,9 @@ Resultados (CONS):
 Desafios:
 \begin{itemize}
 \visible<2->{\item "Wug Test"; \\ Exemplos: "poguir", "redir", "atover"}
+\vspace{0.2cm}
 \visible<3->{\item Adaptar a rede para a língua portuguesa}
+\vspace{0.2cm}
 \visible<4->{\item Melhorar o desempenho da rede}
 \end{itemize}
 \end{frame}
@@ -233,20 +257,20 @@ Desafios:
 
 
 \begin{frame}{Definition}
-We call \alert{language model} a probability distribution over sequences of tokens in a natural language.
+Nos chamamos de \alert{modelo de linguagem} uma distribuição de probabildiade sobre uma sequencia de tokens em uma lingua natural.
 
 \[
 P(x_1,x_2,x_3,x_4) = p
 \]
 
-\textbf{Used for}:
+\textbf{Usamos esse modelo em}:
 \begin{itemize}
-\item speech recognition
-\item machine translation
+\item reconhecimento de fala
+\item tradução automática
 \item text auto-completion
-\item spell correction
-\item question answering
-\item summarization
+\item correção de texto
+\item resposta automatizada
+\item summarização
 \end{itemize}
 
 
@@ -259,8 +283,8 @@ independencia, prop condicional
 \end{frame}
 
 
-\begin{frame}{How do we build these probabilities?}
-Using the chain rule of probability: 
+\begin{frame}{Como calculamos essas probabilidades?}
+Regra da cadeia:
 
 \begin{equation*}
 P(x_1,x_2,x_3,x_4) = P(x_1)P(x_2\vert x_1)P(x_3\vert x_1x_2)P(x_4\vert x_1x_2x_3)
@@ -268,7 +292,7 @@ P(x_1,x_2,x_3,x_4) = P(x_1)P(x_2\vert x_1)P(x_3\vert x_1x_2)P(x_4\vert x_1x_2x_3
 
 \vspace{0.3cm}
 
-To make things simple we use a \textbf{Markovian assumption}, i.e., for a specific $n$ we assume that:
+Para simplificação fazemos a \textbf{suposição de Markov}, i.e., para um  $n$ específico assumimos que:
 
 \begin{equation*}
 P(x_1, \dots, x_T) = \prod_{t=1}^{T} P(x_t \vert x_1, \dots, x_{t-1}) = \prod_{t=1}^{T} P(x_{t} \vert x_{t - (n+1)}, \dots, x_{t-1})
@@ -276,27 +300,27 @@ P(x_1, \dots, x_T) = \prod_{t=1}^{T} P(x_t \vert x_1, \dots, x_{t-1}) = \prod_{t
 
 \end{frame}
 
-\begin{frame}{Models based on $n$-gram statistics}
-The choice of $n$ yields different models.\\
+\begin{frame}{Modelos baseados em estatísticas de $n$-gramas}
+A escolha de $n$ leva a modelos diferentes.\\
 
-\textbf{Unigram} language model ($n=1$): 
+\textbf{Modelo de unigrama} ($n=1$): 
 \begin{equation*}
 P_{uni}(x_1, x_2, x_3, x_4) = P(x_1)P(x_2)P(x_3)P(x_4)
 \end{equation*}
 
-where $P(x_i) = count(x_i)$.\\
+em que $P(x_i) = count(x_i)$.\\
 
-\textbf{Bigram} language model ($n=2$): 
+\textbf{Modelo de bigrama} ($n=2$): 
 \begin{equation*}
 P_{bi}(x_1,x_2,x_3,x_4) = P(x_1)P(x_2\vert x_1)P(x_3\vert x_2)P(x_4\vert x_3)
 \end{equation*} 
-where
+em que
 \[
 P(x_i\vert x_j) = \frac{count(x_i, x_j)}{count(x_j)}
 \]
 \end{frame}
 
-\begin{frame}{$n$-gram statistics}
+\begin{frame}{Estatísticas de $n$-gramas}
 \url{https://books.google.com/ngrams}
 \vspace{0.4cm}
 
@@ -305,11 +329,11 @@ P(x_i\vert x_j) = \frac{count(x_i, x_j)}{count(x_j)}
 
 
 
-\begin{frame}{Models based on $n$-gram statistics}
+\begin{frame}{Modelos baseados em estatísticas de $n$-gramas}
 \begin{itemize}
-\item Higher $n$-grams yields better performance.
+\item Quanto maior o $n$ melhor a performance do modelo.
 \vspace{0.7cm}
-\item Higher $n$-grams requires a lot of memory!
+\item Quanto maior o $n$ maior o uso de memória!
 \vspace{0.1cm}
 \begin{quote}
 "Using one machine \textbf{with 140 GB
@@ -323,18 +347,28 @@ model on 126 billion tokens."
 \end{frame}
 
 
-\begin{frame}{Language model as sequential data prediction}
-Instead of using one approach that is specific for the language domain, we can use a general model for sequential data prediction: a \textbf{RNN}. \\
+\begin{frame}{Modelos de linguagem como predição de data sequencial}
 
-Our learning task is to estimate the probability distribution 
+Em vez de usar uma abordagem que seja específica para o domínio da linguagem natural, podemos usar um modelo para predição de dados sequencias:  \textbf{uma rede recorrente (RNN)}. \\
+
+Nossa tarefa de aprendizado é estimar a distribuição de probabilidade
 
 \[
-P(x_{n} = \text{word}_{j^{*}} | x_{1}, \dots ,x_{n-1})
+P(x_{n} = \text{palavra}_{j^{*}} | x_{1}, \dots ,x_{n-1})
 \]
 
-for any $(n-1)$-sequence of words $x_{1}, \dots ,x_{n-1}$.
+para qualquer $(n-1)$ sequencia de palavras $x_{1}, \dots ,x_{n-1}$.
 \end{frame}
 
+\begin{frame}{Classificação com uma rede neural}
+\input{tikzfiles/DFNclassification}
+\end{frame}
+
+\begin{frame}{Classificação com uma RNN}
+\input{tikzfiles/RNNclassification}
+exemplo com analise de sentimento,
+bonito mas burro ahahahahahahahahah
+\end{frame}
 
 \begin{frame}[fragile]{RNNs}
 \input{tikzfiles/RNN1}
@@ -346,15 +380,11 @@ for any $(n-1)$-sequence of words $x_{1}, \dots ,x_{n-1}$.
 \end{frame}
 
 
-\begin{frame}{Classificação com uma rede neural}
-\input{tikzfiles/DFNclassification}
-\end{frame}
 
+\begin{frame}{Exemplo de um dataset}
+Nos separamos um corpus $C$ com $T$ tokens e vocabulário $\Vocab$.\\\
 
-\begin{frame}{Building the dataset}
-We start with a corpus $C$ with $T$ tokens and a vocabulary $\Vocab$.\\\
-
-Example: \textbf{Make Some Noise} by the Beastie Boys.\\
+Exemplo: \textbf{Make Some Noise}, the Beastie Boys.\\
 
 \begin{quote}
 \alert{Yes, here we go again, give you more, nothing lesser\\
@@ -371,8 +401,8 @@ The best is yet to come, and yes, believe this\\
 
 \end{frame}
 
-\begin{frame}{Building the dataset}
-The dataset is a collection of pairs $(\vect{x},\vect{y})$ where $\vect{x}$ is one word and $\vect{y}$ is the immediately next word. For example:
+\begin{frame}{Exemplo de um dataset}
+O dataset é uma coleção de pares $(\vect{x},\vect{y})$ em que $\vect{x}$ é uma palavra e $\vect{y}$ é a palavra imediatamente a direita. Por exemplo:
 \begin{itemize}
 \item [] $(\vect{x}^{(1)}, \vect{y}^{(1)}) =$ (Yes, here).
 \item [] $(\vect{x}^{(2)}, \vect{y}^{(2)}) =$ (here, we)
@@ -386,24 +416,18 @@ The dataset is a collection of pairs $(\vect{x},\vect{y})$ where $\vect{x}$ is o
 \end{frame}
 
 
-\begin{frame}{The language model: graph}
+\begin{frame}{O modelo de linguagem com RNN}
 \input{tikzfiles/LanguageModelSimplified}
 \end{frame}
 
-\begin{frame}{The Language model: unfolding example}
+\begin{frame}{Word Embeddings}
+\input{tikzfiles/embedding_vector}
+\end{frame}
+
+
+\begin{frame}{O modelo de linguagem com RNN}
 \input{tikzfiles/LanguageModelUnfolded}
 \end{frame}
-
-\begin{frame}{Loss and Perplexity}
-So another definition of perplexity is
-\vspace{0.5cm}
-\Large{
-\begin{equation*}
-2^{L} = PP(C)
-\end{equation*}
-}
-\end{frame}
-
 
 \begin{frame}{Vanishing}
 
@@ -445,11 +469,6 @@ This is bad for capturing \alert{long-term dependecies}.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{LSTM: recurrence}
-\input{tikzfiles/LSTM_cell}
-\end{frame}
-
-
 \begin{frame}{MytwitterBot: TrumpBot}
 \url{https://github.com/felipessalvatore/MyTwitterBot}
 \begin{center}
@@ -464,7 +483,11 @@ This is bad for capturing \alert{long-term dependecies}.
 \end{center}
 \end{frame}
 
-\section{Conclusion}
+
+\begin{frame}{Tradução automatica}
+Colocar o exemplo do fabiano
+\end{frame}
+
 
 \begin{frame}{What's next?}
 After some experiments with the hyper parameters my best result on the \alert{Penn Treebank (PTB)} corpus was
@@ -480,6 +503,8 @@ Mikolov et al (2011)\cite{Mikolov11} & $163.2$  & $149.9$ \\ \hline
 \end{tabular}
 \end{center}
 \end{figure}
+
+Falando breve sobre perplexidade, maior menor
 \end{frame}
 
 \begin{frame}{Novas arquiteturas: \url{https://arxiv.org/abs/1708.02182}}
@@ -487,8 +512,29 @@ Mikolov et al (2011)\cite{Mikolov11} & $163.2$  & $149.9$ \\ \hline
 \begin{center}
 \includegraphics[scale=0.34]{images/SocherPTB.png}
 \end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\textbf{\LARGE{Obrigado}}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{center}
+\includegraphics[scale=0.2]{images/gliclogo.jpeg}
+\end{center}
+\url{https://glicusp.wordpress.com/}
+
+\vspace{0.3cm}
+
+\begin{center}
+\includegraphics[scale=0.3]{images/logo0.pdf}
+\end{center}
+\url{https://www.ime.usp.br/~liamf/}
 
 \end{frame}
+
 
 \begin{frame}[allowframebreaks]{References}
 
