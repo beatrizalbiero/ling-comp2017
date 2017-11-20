@@ -525,13 +525,17 @@ O dataset é uma coleção de pares $(\vect{x},\vect{y})$ em que $\vect{x}$ é u
 \end{frame}
 
 
-\begin{frame}{Tradução automatica}
+\begin{frame}{Tradução automática: Inglês $\rightarrow$ SPARQL\cite{luzfinger2017}}
 \input{tikzfiles/Translation}
 \end{frame}
 
 
-\begin{frame}{What's next?}
-After some experiments with the hyper parameters my best result on the \alert{Penn Treebank (PTB)} corpus was
+\begin{frame}{LSTM e GRU são apenas o começo}
+\textbf{Perplexidade} é uma medida de quantas palavras diferentes igualmente prováveis podem seguir uma sequencia de palavras (pior caso $|\Vocab|$, melhor caso $1$). 
+
+\vspace{0.5cm}
+
+Olhando o corpus \alert{Penn Treebank (PTB)} ($|\Vocab| = 10000$):
 
 \vspace{0.5cm}
 
@@ -541,11 +545,11 @@ After some experiments with the hyper parameters my best result on the \alert{Pe
 \hline
 \cellcolor{blue!60}Model & \cellcolor{blue!60}Val & \cellcolor{blue!60}Test  \\ \hline
 Mikolov et al (2011)\cite{Mikolov11} & $163.2$  & $149.9$ \\ \hline
+Zaremba et al (2014)\cite{DBLP:journals/corr/ZarembaSV14} & $82.62$  & $78.29$ \\ \hline
 \end{tabular}
 \end{center}
 \end{figure}
 
-Falando breve sobre perplexidade, maior menor
 \end{frame}
 
 \begin{frame}{Novas arquiteturas: \url{https://arxiv.org/abs/1708.02182}}

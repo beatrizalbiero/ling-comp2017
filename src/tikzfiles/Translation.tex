@@ -1,48 +1,112 @@
-% RNN STATE CELL ====================================
-\newcommand{\rnnSimple}[4]{
+% RNN encoder ====================================
+\newcommand{\rnnencoder}[4]{
 
 % operations
 \node[state, minimum size=40pt,#4] (h#3) {$\vect{h}^{#1}$};
-\node[output, minimum size=40pt, above=30pt of h#3] (yhat#3){$\hat{\vect{y}}^{#1}$};
 \node[op, minimum size=40pt,below=30pt of h#3] (e#3) {$\vect{e}^{#1}$};
 \node[textonly, below=0.1pt of e#3] {{\Large#2}};
 
 % edges
 \path[tedge] (e#3) edge node[below right= -4pt] {} (h#3);
+}
+
+% RNN decoder ====================================
+\newcommand{\rnndecoder}[4]{
+
+% operations
+\node[state, minimum size=40pt,#4] (h#3) {${\vect{h}^{\prime}}^{#1}$};
+\node[output, minimum size=40pt, above=30pt of h#3] (yhat#3){$\hat{\vect{y}}^{#1}$};
+\node[op, minimum size=40pt,below=30pt of h#3] (x#3) {$\vect{x}^{#1}$};
+\node[textonly, below=0.1pt of x#3] {{\Large#2}};
+
+% edges
+\path[tedge] (x#3) edge node[below right= -4pt] {} (h#3);
 \path[tedge] (h#3) edge node[below right = -4pt] {} (yhat#3);
 }
 
+
+\newcommand{\rnndecoderSimpl}[4]{
+
+% operations
+\node[state, minimum size=40pt,#4] (h#3) {${\vect{h}^{\prime}}^{#1}$};
+\node[op, minimum size=40pt,below=30pt of h#3] (x#3) {$\vect{x}^{#1}$};
+\node[textonly, below=0.1pt of x#3] {{\Large#2}};
+
+% edges
+\path[tedge] (x#3) edge node[below right= -4pt] {} (h#3);
+}
+
+
 \begin{figure}[ht!]
 \hspace*{-1.0cm}
-\scalebox{0.8}{
+\scalebox{0.5}{
 \begin{tikzpicture}[auto]
 
-% timestep 1
-\rnnSimple{(1)}{Yes}{t1}{}
+% timestep encoder 1
+\rnnencoder{(1)}{What}{t1}{}
 
-% % timestep 0
-\node[state, minimum size=40pt,left=50pt of ht1] (ht0) {$\vect{h}^{(0)}$};
+% timestep encoder 0
+\node[state, minimum size=40pt,left=40pt of ht1] (ht0) {$\vect{h}^{(0)}$};
 
-% % timestep 2
-\rnnSimple{(2)}{here}{t2}{right=50pt of ht1};
+%  timestep encoder 2
+\rnnencoder{(2)}{are}{t2}{right=40pt of ht1};
+
+%  timestep encoder 3
+\rnnencoder{(3)}{the}{t3}{right=40pt of ht2};
+
+%  timestep encoder 4
+\rnnencoder{(4)}{cities}{t4}{right=40pt of ht3};
+
+%  timestep encoder 5
+\rnnencoder{(5)}{of}{t5}{right=40pt of ht4};
+
+%  timestep encoder 6
+\rnnencoder{(6)}{Texas}{t6}{right=40pt of ht5};
+
+%  timestep encoder 7
+\rnnencoder{(7)}{?}{t7}{right=40pt of ht6};
+
+% % state transfers encoder
+\path[tedge] (ht0) -- (ht1);
+\path[tedge] (ht1) --  (ht2);
+\path[tedge] (ht2) -- (ht3);
+\path[tedge] (ht3) -- (ht4);
+\path[tedge] (ht4) --  (ht5);
+\path[tedge] (ht5) -- (ht6);
+\path[tedge] (ht6) -- (ht7);
+
+%  timestep decoder 1
+\rnndecoderSimpl{(1)}{SELECT}{tt1}{above=190pt of ht3};
+
+%  timestep decoder 2
+\rnndecoderSimpl{(2)}{?city}{tt2}{right=40pt of htt1};
+
+%  timestep decoder 3
+\rnndecoderSimpl{(3)}{$\{$}{tt3}{right=40pt of htt2};
+
+%  timestep decoder 4
+\rnndecoder{(4)}{?Texas}{tt4}{right=40pt of htt3};
 
 
-% % timestep 2
-\rnnSimple{(3)}{we}{t3}{right=50pt of ht2};
+% % state transfers encoder
+\path[tedge] (htt1) --  (htt2);
+\path[tedge] (htt2) -- (htt3);
+\path[tedge] (htt3) -- (htt4);
 
-
-% % state transfers
-\path[tedge] (ht0) edge node[above right = 2pt] {$\vect{W}$} (ht1);
-\path[tedge] (ht1) edge node[above right = 2pt] {$\vect{W}$} (ht2);
-\path[tedge] (ht2) edge node[above right = 2pt] {$\vect{W}$} (ht3);
 
 % text
-\node[textonly, above=40pt of yhatt2] (result) {{\Large $P(x^{(4)}| \text{Yes, here, we})$}};
+\node[textonly, left=40pt of yhattt4] (result) {{\Large $P(x^{(5)}| \text{SELECT, ?city, } \{ \text{ , ?Texas, } \vect{h}^{(7)})$}};
 
 % Arrow to result
-%  \path[tedge] (yhatt3)  edge node[bend right, out=-50, distance=25pt] (result);
-\draw[->, line width=1mm] [bend right, out=-50, distance=25pt](yhatt3.north) to  (result.east);
-%  \path[tedge] (yhatt3.north) to [bend right, out=-50, distance=25pt] (result.east);
+\draw[->, line width=1mm] (yhattt4) to  (result.east);
+
+% encoder to decoder
+\node[state, minimum size=40pt, above=70pt of ht1] (2ht7) {$\vect{h}^{(7)}$};
+
+
+% bent Arrow
+\path[tedge] (ht7) edge [out=120, in=-20] node {} (2ht7);
+\path[tedge] (2ht7) edge [out=90, in=180] node {} (htt1);
 
 
 
