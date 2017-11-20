@@ -1,0 +1,29 @@
+\begin{figure}[ht!]
+\centering
+
+\scalebox{1.15}{
+\begin{tikzpicture}[auto]
+
+\node[textonly] (predlabel) {$\vect{\hat{y}} \, \, \, \,=$};
+\node[textonly, right=2pt of predlabel] (predvalue) {$\begin{bmatrix} 0.234\\0.967\\0.123\\\vdots\\0.152\\0.876\\\vdots\\0.765\end{bmatrix}$};
+
+\node[textonly, right=12pt of predvalue] (yvalue) {$\begin{bmatrix} 1\\1\\0\\\vdots\\0\\1\\\vdots\\1\end{bmatrix}$};
+\node[textonly, right=2pt of yvalue] (ylabel) {$= \, \, \, \,\vect{y}$};
+
+\node[textonly, below left=-13pt and -5pt of predvalue] (inv1) {};
+\node[textonly, below right=-13pt and -5pt of yvalue] (inv2) {};
+
+
+\node[boxtextonly, below right=30pt and -5pt of inv1] (MSE) {$(\vect{\hat{y}} - \vect{y})^2$\\ erro quadrado médio};
+
+
+
+% edges
+\draw[orange!120, line width=1mm]  (MSE) to [out=90,in=-90] (inv1);
+\draw[orange!120, line width=1mm] (MSE) to [out=90,in=-90] (inv2);
+
+
+
+\end{tikzpicture}
+} % scalebox
+\end{figure}

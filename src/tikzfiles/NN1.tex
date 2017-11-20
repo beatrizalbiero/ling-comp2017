@@ -7,21 +7,21 @@
 % operations =============================
 
 % input layer
-\node[op] (x3) {$3$};
-\node[op, above=10.5pt of x3] (x2) {$2$};
-\node[op, above=10.5pt of x2] (x1) {$1$};
-\node[op, below=10.5pt of x3] (x4) {$4$};
+\node[op] (x3) {$x_3$};
+\node[op, above=10.5pt of x3] (x2) {$x_2$};
+\node[op, above=10.5pt of x2] (x1) {$x_1$};
+\node[op, below=10.5pt of x3] (x4) {$x_4$};
 
 % hidden layer
-\node[state,  above right= 10pt and 90pt of x3] (h2) {$2$};
-\node[state, below=10.5pt of h2] (h3) {$3$};
-\node[state, above=10.5pt of h2] (h1) {$1$};
+\node[state,  above right= 10pt and 90pt of x3] (h2) {$h_2$};
+\node[state, below=10.5pt of h2] (h3) {$h_3$};
+\node[state, above=10.5pt of h2] (h1) {$h_1$};
 
 % output layer
-\node[output,  right=190pt of x3] (out3) {$3$};
-\node[output,  right=190pt of x1] (out1) {$1$};
-\node[output,  right=190pt of x2] (out2) {$2$};
-\node[output,  right=190pt of x4] (out4) {$4$};
+\node[output,  right=190pt of x3] (out3) {$\hat{y}_3$};
+\node[output,  right=190pt of x1] (out1) {$\hat{y}_1$};
+\node[output,  right=190pt of x2] (out2) {$\hat{y}_2$};
+\node[output,  right=190pt of x4] (out4) {$\hat{y}_4$};
 
 
 % text only

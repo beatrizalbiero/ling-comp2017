@@ -1,23 +1,38 @@
 \begin{figure}[ht!]
 \centering
 
-\scalebox{1.55}{
+\scalebox{1.1}{
 \begin{tikzpicture}[auto]
 
 % operations =============================
 
 % nodes
 \node (shirt)
-    {\includegraphics[width=.15\textwidth]{images/shirt.png}};
-% \node[textonly, below=1pt of shirt] (dimension0) {{\small$28\times 28$}};
-\node[textonly, right=90pt of shirt] (y) {$y=$ camisa};
+    {\includegraphics[width=.15\textwidth]{images/1fmnist.jpg}};
+\node[textonly, right=30pt of shirt] (y1) {$y=$ camisa};
+
+\node[below=10pt of shirt] (bag)
+    {\includegraphics[width=.15\textwidth]{images/2fmnist.jpg}};
+\node[textonly, right=30pt of bag] (y2) {$y=$ bolsa};
+
+\node[right=10pt of y1] (dress)
+    {\includegraphics[width=.15\textwidth]{images/3fmnist.jpg}};
+\node[textonly, right=30pt of dress] (y3) {$y=$ vestido};
+
+\node[below=10pt of dress] (sneaker)
+    {\includegraphics[width=.15\textwidth]{images/4fmnist.jpg}};
+\node[textonly, right=30pt of sneaker] (y4) {$y=$ tênis};
+
 
 
 
 
 
 % edges
-\path[tedge, orange!120, line width=1mm] (shirt) -- (y);
+\path[tedge, orange!120, line width=1mm] (shirt) -- (y1);
+\path[tedge, orange!120, line width=1mm] (bag) -- (y2);
+\path[tedge, orange!120, line width=1mm] (dress) -- (y3);
+\path[tedge, orange!120, line width=1mm] (sneaker) -- (y4);
 
 
 

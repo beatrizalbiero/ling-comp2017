@@ -1,0 +1,57 @@
+\begin{figure}[ht!]
+\centering
+
+\scalebox{1.3}{
+\begin{tikzpicture}[auto]
+
+% operations =============================
+
+% input layer
+\node[op] (x3) {$x_3$};
+\node[op, above=20.5pt of x3] (x2) {$x_2$};
+\node[op, above=20.5pt of x2] (x1) {$x_1$};
+
+% hidden layer
+\node[op,  below right= 10pt and 90pt of x2] (h2) {$h_2$};
+\node[op, above=20.5pt of h2] (h1) {$h_1$};
+
+% output layer
+\node[op,  right=50pt of h1] (out1) {$\hat{y}_1$};
+\node[op,  right=50pt of h2] (out2) {$\hat{y}_2$};
+
+%labels
+
+\node[textonly,  above right= 30pt and 30pt of x2] (W) {\LARGE{$\vect{W}$}};
+
+\node[textonly,  above right= 40pt and 15pt of h2] (V) {\LARGE{$\vect{V}$}};
+
+
+
+%edges input to hidden
+
+\path[tedge] (x1) -- (h1);
+\path[tedge] (x1) -- (h2);
+
+
+\path[tedge] (x2) -- (h1);
+\path[tedge] (x2) -- (h2);
+
+
+\path[tedge] (x3) -- (h1);
+\path[tedge] (x3) -- (h2);
+
+
+
+% edges hidden to output
+\path[tedge] (h1) -- (out1);
+\path[tedge] (h1) -- (out2);
+
+
+\path[tedge] (h2) -- (out1);
+\path[tedge] (h2) -- (out2);
+
+
+
+\end{tikzpicture}
+} % scalebox
+\end{figure}

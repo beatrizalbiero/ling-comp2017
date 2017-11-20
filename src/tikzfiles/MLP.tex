@@ -1,0 +1,36 @@
+\begin{figure}[ht!]
+\centering
+
+\scalebox{1.12}{
+\begin{tikzpicture}[auto]
+
+% operations =============================
+\node[op] (x2) {$x_2$};
+\node[op, above=60pt of x2] (x1) {$x_1$};
+\node[op, below=60pt of x2] (x3) {$x_3$};
+\node[op, right=80pt of x2] (v1) {$v_1$};
+\node[op, below=20pt of v1] (v2) {$v_2$};
+
+\node[op, right=40pt of v1] (y1) {$\hat{y}_{1}$};
+\node[op, right=40pt of v2] (y2) {$\hat{y}_{2}$};
+
+\node[textonly, above right=28pt and -86pt of y1] (f) {$\vect{\hat{y}} = f(\vect{x};\vect{\theta})= g(\vect{v})= g(\vect{\theta} \vect{x})$};
+
+
+% edges
+\path[tedge] (x1) edge node[above=1.8pt] {$\vect{\theta}_{1,1}$} (v1);
+\path[tedge] (x2) edge node[above=0.2pt] {$\vect{\theta}_{1,2}$} (v1);
+\path[tedge] (x3) edge node[above=3.8pt] {$\vect{\theta}_{1,3}$} (v1);
+\path[tedge] (v1) edge node[above=1pt] {{\Large$g$}}  (y1) ;
+\path[tedge] (x1) edge node[above=1.8pt] {$\vect{\theta}_{2,1}$} (v2);
+\path[tedge] (x2) edge node[above=0.2pt] {$\vect{\theta}_{2,2}$} (v2);
+\path[tedge] (x3) edge node[above=3.8pt] {$\vect{\theta}_{2,3}$} (v2);
+\path[tedge] (v2) edge node[above=1pt] {{\Large$g$}}  (y2) ;
+
+% info edges
+
+
+
+\end{tikzpicture}
+} % scalebox
+\end{figure}

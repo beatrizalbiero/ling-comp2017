@@ -1,0 +1,530 @@
+\begin{figure}[ht!]
+\centering
+
+\scalebox{0.38}{
+\begin{tikzpicture}[auto]
+
+% operations =============================
+
+% input layer
+\node[op] (x5) {};
+\node[op, above=2.5pt of x5] (x4) {};
+\node[op, above=2.5pt of x4] (x3) {};
+\node[op, above=2.5pt of x3] (x2) {};
+\node[op, above=2.5pt of x2] (x1) {};
+\node[op, below=2.5pt of x5] (x6) {};
+\node[op, below=2.5pt of x6] (x7) {};
+\node[op, below=2.5pt of x7] (x8) {};
+\node[op, below=2.5pt of x8] (x9) {};
+\node[op, below=2.5pt of x9] (x10) {};
+\node[boxtextonly, below=2.5pt of x10] (x11) {$\vdots$};
+\node[op, below=2.5pt of x11] (x12) {};
+\node[op, below=2.5pt of x12] (x13) {};
+\node[op, below=2.5pt of x13] (x14) {};
+\node[op, below=2.5pt of x14] (x15) {};
+\node[op, below=2.5pt of x15] (x16) {};
+
+
+
+% hidden layer1
+\node[op,  right=140pt of x5] (v1) {};
+\node[op, below=2.5pt of v1] (v2) {};
+\node[op, below=2.5pt of v2] (v3) {};
+\node[op, below=2.5pt of v3] (v4) {};
+\node[op, below=2.5pt of v4] (v5) {};
+\node[op, below=2.5pt of v5] (v6) {};
+\node[op, below=2.5pt of v6] (v7) {};
+\node[op, below=2.5pt of v7] (v8) {};
+\node[op, below=2.5pt of v8] (v9) {};
+
+% hidden layer2
+\node[op,  right=140pt of v1] (nv1) {};
+\node[op, below=2.5pt of nv1] (nv2) {};
+\node[op, below=2.5pt of nv2] (nv3) {};
+\node[op, below=2.5pt of nv3] (nv4) {};
+\node[op, below=2.5pt of nv4] (nv5) {};
+\node[op, below=2.5pt of nv5] (nv6) {};
+\node[op, below=2.5pt of nv6] (nv7) {};
+\node[op, below=2.5pt of nv7] (nv8) {};
+\node[op, below=2.5pt of nv8] (nv9) {};
+
+
+% hidden layer3
+\node[op,  right=140pt of nv1] (mv1) {};
+\node[op, below=2.5pt of mv1] (mv2) {};
+\node[op, below=2.5pt of mv2] (mv3) {};
+\node[op, below=2.5pt of mv3] (mv4) {};
+\node[op, below=2.5pt of mv4] (mv5) {};
+\node[op, below=2.5pt of mv5] (mv6) {};
+\node[op, below=2.5pt of mv6] (mv7) {};
+\node[op, below=2.5pt of mv7] (mv8) {};
+\node[op, below=2.5pt of mv8] (mv9) {};
+
+
+
+% hidden layer4
+\node[op, right=130pt of mv4] (h2) {};
+\node[op, below=2.5pt of h2] (h3) {};
+\node[op, below=2.5pt of h3] (h4) {};
+\node[op, above=2.5pt of h2] (h1) {};
+\node[op, below=2.5pt of h4] (h5) {};
+
+
+% hidden layer5
+\node[op,  below right= 1.5pt and 150pt of h1] (z1) {};
+\node[op,  below=2.5pt of z1] (z2) {};
+\node[op,  below=2.5pt of z2] (z3) {};
+\node[op,  below=2.5pt of z3] (z4) {};
+
+
+%labels
+
+\node[boxtextonly, right=10pt of z1] (lb1) {};
+\node[boxtextonly, right=10pt of z2] (lb2) {};
+\node[boxtextonly, right=10pt of z3] (lb3) {};
+\node[boxtextonly, right=10pt of z4] (lb4) {};
+
+
+
+
+% edges input layer to hidden 1
+\path[tedge] (x1) -- (v1);
+\path[tedge] (x1) -- (v2);
+\path[tedge] (x1) -- (v3);
+\path[tedge] (x1) -- (v4);
+\path[tedge] (x1) -- (v5);
+\path[tedge] (x1) -- (v6);
+\path[tedge] (x1) -- (v7);
+\path[tedge] (x1) -- (v8);
+\path[tedge] (x1) -- (v9);
+
+
+\path[tedge] (x2) -- (v1);
+\path[tedge] (x2) -- (v2);
+\path[tedge] (x2) -- (v3);
+\path[tedge] (x2) -- (v4);
+\path[tedge] (x2) -- (v5);
+\path[tedge] (x2) -- (v6);
+\path[tedge] (x2) -- (v7);
+\path[tedge] (x2) -- (v8);
+\path[tedge] (x2) -- (v9);
+
+
+\path[tedge] (x3) -- (v1);
+\path[tedge] (x3) -- (v2);
+\path[tedge] (x3) -- (v3);
+\path[tedge] (x3) -- (v4);
+\path[tedge] (x3) -- (v5);
+\path[tedge] (x3) -- (v6);
+\path[tedge] (x3) -- (v7);
+\path[tedge] (x3) -- (v8);
+\path[tedge] (x3) -- (v9);
+
+
+\path[tedge] (x4) -- (v1);
+\path[tedge] (x4) -- (v2);
+\path[tedge] (x4) -- (v3);
+\path[tedge] (x4) -- (v4);
+\path[tedge] (x4) -- (v5);
+\path[tedge] (x4) -- (v6);
+\path[tedge] (x4) -- (v7);
+\path[tedge] (x4) -- (v8);
+\path[tedge] (x4) -- (v9);
+
+
+\path[tedge] (x5) -- (v1);
+\path[tedge] (x5) -- (v2);
+\path[tedge] (x5) -- (v3);
+\path[tedge] (x5) -- (v4);
+\path[tedge] (x5) -- (v5);
+\path[tedge] (x5) -- (v6);
+\path[tedge] (x5) -- (v7);
+\path[tedge] (x5) -- (v8);
+\path[tedge] (x5) -- (v9);
+
+
+\path[tedge] (x6) -- (v1);
+\path[tedge] (x6) -- (v2);
+\path[tedge] (x6) -- (v3);
+\path[tedge] (x6) -- (v4);
+\path[tedge] (x6) -- (v5);
+\path[tedge] (x6) -- (v6);
+\path[tedge] (x6) -- (v7);
+\path[tedge] (x6) -- (v8);
+\path[tedge] (x6) -- (v9);
+
+
+\path[tedge] (x7) -- (v1);
+\path[tedge] (x7) -- (v2);
+\path[tedge] (x7) -- (v3);
+\path[tedge] (x7) -- (v4);
+\path[tedge] (x7) -- (v5);
+\path[tedge] (x7) -- (v6);
+\path[tedge] (x7) -- (v7);
+\path[tedge] (x7) -- (v8);
+\path[tedge] (x7) -- (v9);
+
+
+\path[tedge] (x8) -- (v1);
+\path[tedge] (x8) -- (v2);
+\path[tedge] (x8) -- (v3);
+\path[tedge] (x8) -- (v4);
+\path[tedge] (x8) -- (v5);
+\path[tedge] (x8) -- (v6);
+\path[tedge] (x8) -- (v7);
+\path[tedge] (x8) -- (v8);
+\path[tedge] (x8) -- (v9);
+
+
+\path[tedge] (x9) -- (v1);
+\path[tedge] (x9) -- (v2);
+\path[tedge] (x9) -- (v3);
+\path[tedge] (x9) -- (v4);
+\path[tedge] (x9) -- (v5);
+\path[tedge] (x9) -- (v6);
+\path[tedge] (x9) -- (v7);
+\path[tedge] (x9) -- (v8);
+\path[tedge] (x9) -- (v9);
+
+
+\path[tedge] (x10) -- (v1);
+\path[tedge] (x10) -- (v2);
+\path[tedge] (x10) -- (v3);
+\path[tedge] (x10) -- (v4);
+\path[tedge] (x10) -- (v5);
+\path[tedge] (x10) -- (v6);
+\path[tedge] (x10) -- (v7);
+\path[tedge] (x10) -- (v8);
+\path[tedge] (x10) -- (v9);
+
+
+\path[tedge] (x12) -- (v1);
+\path[tedge] (x12) -- (v2);
+\path[tedge] (x12) -- (v3);
+\path[tedge] (x12) -- (v4);
+\path[tedge] (x12) -- (v5);
+\path[tedge] (x12) -- (v6);
+\path[tedge] (x12) -- (v7);
+\path[tedge] (x12) -- (v8);
+\path[tedge] (x12) -- (v9);
+
+
+\path[tedge] (x13) -- (v1);
+\path[tedge] (x13) -- (v2);
+\path[tedge] (x13) -- (v3);
+\path[tedge] (x13) -- (v4);
+\path[tedge] (x13) -- (v5);
+\path[tedge] (x13) -- (v6);
+\path[tedge] (x13) -- (v7);
+\path[tedge] (x13) -- (v8);
+\path[tedge] (x13) -- (v9);
+
+
+\path[tedge] (x14) -- (v1);
+\path[tedge] (x14) -- (v2);
+\path[tedge] (x14) -- (v3);
+\path[tedge] (x14) -- (v4);
+\path[tedge] (x14) -- (v5);
+\path[tedge] (x14) -- (v6);
+\path[tedge] (x14) -- (v7);
+\path[tedge] (x14) -- (v8);
+\path[tedge] (x14) -- (v9);
+
+
+\path[tedge] (x15) -- (v1);
+\path[tedge] (x15) -- (v2);
+\path[tedge] (x15) -- (v3);
+\path[tedge] (x15) -- (v4);
+\path[tedge] (x15) -- (v5);
+\path[tedge] (x15) -- (v6);
+\path[tedge] (x15) -- (v7);
+\path[tedge] (x15) -- (v8);
+\path[tedge] (x15) -- (v9);
+
+
+\path[tedge] (x16) -- (v1);
+\path[tedge] (x16) -- (v2);
+\path[tedge] (x16) -- (v3);
+\path[tedge] (x16) -- (v4);
+\path[tedge] (x16) -- (v5);
+\path[tedge] (x16) -- (v6);
+\path[tedge] (x16) -- (v7);
+\path[tedge] (x16) -- (v8);
+\path[tedge] (x16) -- (v9);
+
+% edges hiden 1 to hidden 2
+
+\path[tedge] (v1) -- (nv1);
+\path[tedge] (v1) -- (nv2);
+\path[tedge] (v1) -- (nv3);
+\path[tedge] (v1) -- (nv4);
+\path[tedge] (v1) -- (nv5);
+\path[tedge] (v1) -- (nv6);
+\path[tedge] (v1) -- (nv7);
+\path[tedge] (v1) -- (nv8);
+\path[tedge] (v1) -- (nv9);
+
+\path[tedge] (v2) -- (nv1);
+\path[tedge] (v2) -- (nv2);
+\path[tedge] (v2) -- (nv3);
+\path[tedge] (v2) -- (nv4);
+\path[tedge] (v2) -- (nv5);
+\path[tedge] (v2) -- (nv6);
+\path[tedge] (v2) -- (nv7);
+\path[tedge] (v2) -- (nv8);
+\path[tedge] (v2) -- (nv9);
+
+\path[tedge] (v3) -- (nv1);
+\path[tedge] (v3) -- (nv2);
+\path[tedge] (v3) -- (nv3);
+\path[tedge] (v3) -- (nv4);
+\path[tedge] (v3) -- (nv5);
+\path[tedge] (v3) -- (nv6);
+\path[tedge] (v3) -- (nv7);
+\path[tedge] (v3) -- (nv8);
+\path[tedge] (v3) -- (nv9);
+
+\path[tedge] (v4) -- (nv1);
+\path[tedge] (v4) -- (nv2);
+\path[tedge] (v4) -- (nv3);
+\path[tedge] (v4) -- (nv4);
+\path[tedge] (v4) -- (nv5);
+\path[tedge] (v4) -- (nv6);
+\path[tedge] (v4) -- (nv7);
+\path[tedge] (v4) -- (nv8);
+\path[tedge] (v4) -- (nv9);
+
+\path[tedge] (v5) -- (nv1);
+\path[tedge] (v5) -- (nv2);
+\path[tedge] (v5) -- (nv3);
+\path[tedge] (v5) -- (nv4);
+\path[tedge] (v5) -- (nv5);
+\path[tedge] (v5) -- (nv6);
+\path[tedge] (v5) -- (nv7);
+\path[tedge] (v5) -- (nv8);
+\path[tedge] (v5) -- (nv9);
+
+\path[tedge] (v6) -- (nv1);
+\path[tedge] (v6) -- (nv2);
+\path[tedge] (v6) -- (nv3);
+\path[tedge] (v6) -- (nv4);
+\path[tedge] (v6) -- (nv5);
+\path[tedge] (v6) -- (nv6);
+\path[tedge] (v6) -- (nv7);
+\path[tedge] (v6) -- (nv8);
+\path[tedge] (v6) -- (nv9);
+
+\path[tedge] (v7) -- (nv1);
+\path[tedge] (v7) -- (nv2);
+\path[tedge] (v7) -- (nv3);
+\path[tedge] (v7) -- (nv4);
+\path[tedge] (v7) -- (nv5);
+\path[tedge] (v7) -- (nv6);
+\path[tedge] (v7) -- (nv7);
+\path[tedge] (v7) -- (nv8);
+\path[tedge] (v7) -- (nv9);
+
+\path[tedge] (v8) -- (nv1);
+\path[tedge] (v8) -- (nv2);
+\path[tedge] (v8) -- (nv3);
+\path[tedge] (v8) -- (nv4);
+\path[tedge] (v8) -- (nv5);
+\path[tedge] (v8) -- (nv6);
+\path[tedge] (v8) -- (nv7);
+\path[tedge] (v8) -- (nv8);
+\path[tedge] (v8) -- (nv9);
+
+\path[tedge] (v9) -- (nv1);
+\path[tedge] (v9) -- (nv2);
+\path[tedge] (v9) -- (nv3);
+\path[tedge] (v9) -- (nv4);
+\path[tedge] (v9) -- (nv5);
+\path[tedge] (v9) -- (nv6);
+\path[tedge] (v9) -- (nv7);
+\path[tedge] (v9) -- (nv8);
+\path[tedge] (v9) -- (nv9);
+
+% edges hiden 2 to hidden 3
+
+\path[tedge] (nv1) -- (mv1);
+\path[tedge] (nv1) -- (mv2);
+\path[tedge] (nv1) -- (mv3);
+\path[tedge] (nv1) -- (mv4);
+\path[tedge] (nv1) -- (mv5);
+\path[tedge] (nv1) -- (mv6);
+\path[tedge] (nv1) -- (mv7);
+\path[tedge] (nv1) -- (mv8);
+\path[tedge] (nv1) -- (mv9);
+
+\path[tedge] (nv2) -- (mv1);
+\path[tedge] (nv2) -- (mv2);
+\path[tedge] (nv2) -- (mv3);
+\path[tedge] (nv2) -- (mv4);
+\path[tedge] (nv2) -- (mv5);
+\path[tedge] (nv2) -- (mv6);
+\path[tedge] (nv2) -- (mv7);
+\path[tedge] (nv2) -- (mv8);
+\path[tedge] (nv2) -- (mv9);
+
+\path[tedge] (nv3) -- (mv1);
+\path[tedge] (nv3) -- (mv2);
+\path[tedge] (nv3) -- (mv3);
+\path[tedge] (nv3) -- (mv4);
+\path[tedge] (nv3) -- (mv5);
+\path[tedge] (nv3) -- (mv6);
+\path[tedge] (nv3) -- (mv7);
+\path[tedge] (nv3) -- (mv8);
+\path[tedge] (nv3) -- (mv9);
+
+\path[tedge] (nv4) -- (mv1);
+\path[tedge] (nv4) -- (mv2);
+\path[tedge] (nv4) -- (mv3);
+\path[tedge] (nv4) -- (mv4);
+\path[tedge] (nv4) -- (mv5);
+\path[tedge] (nv4) -- (mv6);
+\path[tedge] (nv4) -- (mv7);
+\path[tedge] (nv4) -- (mv8);
+\path[tedge] (nv4) -- (mv9);
+
+\path[tedge] (nv5) -- (mv1);
+\path[tedge] (nv5) -- (mv2);
+\path[tedge] (nv5) -- (mv3);
+\path[tedge] (nv5) -- (mv4);
+\path[tedge] (nv5) -- (mv5);
+\path[tedge] (nv5) -- (mv6);
+\path[tedge] (nv5) -- (mv7);
+\path[tedge] (nv5) -- (mv8);
+\path[tedge] (nv5) -- (mv9);
+
+\path[tedge] (nv6) -- (mv1);
+\path[tedge] (nv6) -- (mv2);
+\path[tedge] (nv6) -- (mv3);
+\path[tedge] (nv6) -- (mv4);
+\path[tedge] (nv6) -- (mv5);
+\path[tedge] (nv6) -- (mv6);
+\path[tedge] (nv6) -- (mv7);
+\path[tedge] (nv6) -- (mv8);
+\path[tedge] (nv6) -- (mv9);
+
+\path[tedge] (nv7) -- (mv1);
+\path[tedge] (nv7) -- (mv2);
+\path[tedge] (nv7) -- (mv3);
+\path[tedge] (nv7) -- (mv4);
+\path[tedge] (nv7) -- (mv5);
+\path[tedge] (nv7) -- (mv6);
+\path[tedge] (nv7) -- (mv7);
+\path[tedge] (nv7) -- (mv8);
+\path[tedge] (nv7) -- (mv9);
+
+\path[tedge] (nv8) -- (mv1);
+\path[tedge] (nv8) -- (mv2);
+\path[tedge] (nv8) -- (mv3);
+\path[tedge] (nv8) -- (mv4);
+\path[tedge] (nv8) -- (mv5);
+\path[tedge] (nv8) -- (mv6);
+\path[tedge] (nv8) -- (mv7);
+\path[tedge] (nv8) -- (mv8);
+\path[tedge] (nv8) -- (mv9);
+
+\path[tedge] (nv9) -- (mv1);
+\path[tedge] (nv9) -- (mv2);
+\path[tedge] (nv9) -- (mv3);
+\path[tedge] (nv9) -- (mv4);
+\path[tedge] (nv9) -- (mv5);
+\path[tedge] (nv9) -- (mv6);
+\path[tedge] (nv9) -- (mv7);
+\path[tedge] (nv9) -- (mv8);
+\path[tedge] (nv9) -- (mv9);
+
+% edges hiden 3 to hidden 4
+
+
+
+\path[tedge] (mv1) -- (h1);
+\path[tedge] (mv1) -- (h2);
+\path[tedge] (mv1) -- (h3);
+\path[tedge] (mv1) -- (h4);
+\path[tedge] (mv1) -- (h5);
+
+\path[tedge] (mv2) -- (h1);
+\path[tedge] (mv2) -- (h2);
+\path[tedge] (mv2) -- (h3);
+\path[tedge] (mv2) -- (h4);
+\path[tedge] (mv2) -- (h5);
+
+\path[tedge] (mv3) -- (h1);
+\path[tedge] (mv3) -- (h2);
+\path[tedge] (mv3) -- (h3);
+\path[tedge] (mv3) -- (h4);
+\path[tedge] (mv3) -- (h5);
+
+\path[tedge] (mv4) -- (h1);
+\path[tedge] (mv4) -- (h2);
+\path[tedge] (mv4) -- (h3);
+\path[tedge] (mv4) -- (h4);
+\path[tedge] (mv4) -- (h5);
+
+\path[tedge] (mv5) -- (h1);
+\path[tedge] (mv5) -- (h2);
+\path[tedge] (mv5) -- (h3);
+\path[tedge] (mv5) -- (h4);
+\path[tedge] (mv5) -- (h5);
+
+\path[tedge] (mv6) -- (h1);
+\path[tedge] (mv6) -- (h2);
+\path[tedge] (mv6) -- (h3);
+\path[tedge] (mv6) -- (h4);
+\path[tedge] (mv6) -- (h5);
+
+\path[tedge] (mv7) -- (h1);
+\path[tedge] (mv7) -- (h2);
+\path[tedge] (mv7) -- (h3);
+\path[tedge] (mv7) -- (h4);
+\path[tedge] (mv7) -- (h5);
+
+\path[tedge] (mv8) -- (h1);
+\path[tedge] (mv8) -- (h2);
+\path[tedge] (mv8) -- (h3);
+\path[tedge] (mv8) -- (h4);
+\path[tedge] (mv8) -- (h5);
+
+\path[tedge] (mv9) -- (h1);
+\path[tedge] (mv9) -- (h2);
+\path[tedge] (mv9) -- (h3);
+\path[tedge] (mv9) -- (h4);
+\path[tedge] (mv9) -- (h5);
+
+% edges hidden 4 to output
+\path[tedge] (h1) -- (z1);
+\path[tedge] (h1) -- (z2);
+\path[tedge] (h1) -- (z3);
+\path[tedge] (h1) -- (z4);
+
+\path[tedge] (h2) -- (z1);
+\path[tedge] (h2) -- (z2);
+\path[tedge] (h2) -- (z3);
+\path[tedge] (h2) -- (z4);
+
+
+\path[tedge] (h3) -- (z1);
+\path[tedge] (h3) -- (z2);
+\path[tedge] (h3) -- (z3);
+\path[tedge] (h3) -- (z4);
+
+
+\path[tedge] (h4) -- (z1);
+\path[tedge] (h4) -- (z2);
+\path[tedge] (h4) -- (z3);
+\path[tedge] (h4) -- (z4);
+
+
+\path[tedge] (h5) -- (z1);
+\path[tedge] (h5) -- (z2);
+\path[tedge] (h5) -- (z3);
+\path[tedge] (h5) -- (z4);
+
+
+
+\end{tikzpicture}
+} % scalebox
+\end{figure}

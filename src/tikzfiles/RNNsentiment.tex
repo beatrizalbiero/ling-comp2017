@@ -1,0 +1,42 @@
+\begin{figure}[ht!]
+\centering
+
+\scalebox{0.85}{
+\begin{tikzpicture}[auto]
+
+% operations =============================
+
+% nodes
+\node[textonly] (vectorx1) {$\begin{bmatrix}0.34\\ \vdots \\0.06\end{bmatrix}$};
+\node[textonly, above=1pt of vectorx1] (x1) {$\vect{x}^{(1)}$};
+\node[textonly, below=15pt of vectorx1] (vectorx2) {$\begin{bmatrix}0.92\\ \vdots \\-0.55\end{bmatrix}$};
+\node[textonly, above=1pt of vectorx2] (x2) {$\vect{x}^{(2)}$};
+\node[textonly, below=15pt of vectorx2] (vectorx3) {$\begin{bmatrix}-0.53\\ \vdots \\1.1\end{bmatrix}$};
+\node[textonly, above=1pt of vectorx3] (x3) {$\vect{x}^{(3)}$};
+
+
+\node[op, right=30pt of vectorx2] (model) {\textbf{RNN}};
+\node[textonly, right=30pt of model] (vectoryhat) {$\begin{bmatrix}p(y=\text{positivo}|\; \vect{x}^{(1)},\vect{x}^{(2)}, \vect{x}^{(3)};\vect{\theta})\\p(y=\text{neutro}|\; \vect{x}^{(1)},\vect{x}^{(2)}, \vect{x}^{(3)};\vect{\theta}) \\p(y=\text{negativo}|\; \vect{x}^{(1)},\vect{x}^{(2)}, \vect{x}^{(3)};\vect{\theta})\end{bmatrix}$};
+\node[textonly, above=1pt of vectoryhat] (yhat) {$\hat{\vect{y}}$};
+
+
+\visible<2->{\node[textonly, below=12pt of vectoryhat] (xslabels) {$\vect{x}^{(1)} \; \; \; \; \vect{x}^{(2)} \; \; \; \; \vect{x}^{(3)}$};}
+\visible<2->{\node[textonly, below=-2pt of xslabels] (sentence) {Bonito mas idiota};}
+
+\visible<3->{\node[textonly, below=20pt of xslabels] (yslabels) {$\vect{y}^{(1)}, \; \; \; \; \vect{y}^{(2)}, \; \; \; \; \vect{y}^{(3)}$};}
+\visible<3->{\node[textonly, below=-2pt of yslabels] (groundtruht) {positivo, neutro, negativo};}
+
+\visible<4->{\node[textonly, right=1pt of vectoryhat] (ys) {$=\begin{bmatrix}0.2\\0.1\\0.7\end{bmatrix}$};}
+
+
+
+% edges
+\path[tedge] (vectorx1) -- (model);
+\path[tedge] (vectorx2) -- (model);
+\path[tedge] (vectorx3) -- (model);
+\path[tedge] (model) -- (vectoryhat);
+
+
+\end{tikzpicture}
+} % scalebox
+\end{figure}

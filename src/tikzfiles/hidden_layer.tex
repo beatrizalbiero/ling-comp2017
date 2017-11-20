@@ -17,7 +17,7 @@
 \node[op, below=2.5pt of x7] (x8) {};
 \node[op, below=2.5pt of x8] (x9) {};
 \node[op, below=2.5pt of x9] (x10) {};
-\node[boxtextonly, below=2.5pt of x10] (x11) {.\\.\\.};
+\node[boxtextonly, below=2.5pt of x10] (x11) {$\vdots$};
 \node[op, below=2.5pt of x11] (x12) {};
 \node[op, below=2.5pt of x12] (x13) {};
 \node[op, below=2.5pt of x13] (x14) {};
@@ -52,19 +52,21 @@
 
 
 % output layer
-\node[op,  right=150pt of h2] (z1) {};
-\node[op,  right=150pt of h3] (z2) {};
-\node[opintense,  right=150pt of h4] (z3) {};
+\node[op,  below right= 1.5pt and 150pt of h1] (z1) {};
+\node[op,  below=2.5pt of z1] (z2) {};
+\node[opintense,  below=2.5pt of z2] (z3) {};
+\node[op,  below=2.5pt of z3] (z4) {};
 
-\node[op,  right=50pt of z1] (y1) {};
-\node[op,  right=50pt of z2] (y2) {};
-\node[opintense,  below=2.5pt of y2] (y3) {};
+%\node[op,  right=50pt of z1] (y1) {};
+%\node[op,  right=50pt of z2] (y2) {};
+%\node[opintense,  below=2.5pt of y2] (y3) {};
 
 %labels
 
-\node[boxtextonly, right=10pt of y1] (lb1) {\huge meia};
-\node[boxtextonly, right=10pt of y2] (lb2) {\huge shorts};
-\node[boxtextonly, right=10pt of y3] (lb3) {\huge camiseta};
+\node[boxtextonly, right=10pt of z1] (lb1) {\huge bolsa};
+\node[boxtextonly, right=10pt of z2] (lb2) {\huge vestido};
+\node[boxtextonly, right=10pt of z3] (lb3) {\huge camisa};
+\node[boxtextonly, right=10pt of z4] (lb4) {\huge tênis};
 
 
 
@@ -295,30 +297,36 @@
 \path[tedge] (h1) -- (z1);
 \path[tedge] (h1) -- (z2);
 \path[tedge] (h1) -- (z3);
+\path[tedge] (h1) -- (z4);
 
 \path[tedge] (h2) -- (z1);
 \path[tedge] (h2) -- (z2);
 \path[tedge] (h2) -- (z3);
+\path[tedge] (h2) -- (z4);
+
 
 \path[tedge] (h3) -- (z1);
 \path[tedge] (h3) -- (z2);
 \path[tedge] (h3) -- (z3);
+\path[tedge] (h3) -- (z4);
+
 
 \path[tedge] (h4) -- (z1);
 \path[tedge] (h4) -- (z2);
 \path[tedge] (h4) -- (z3);
+\path[tedge] (h4) -- (z4);
+
 
 \path[tedge] (h5) -- (z1);
 \path[tedge] (h5) -- (z2);
 \path[tedge] (h5) -- (z3);
+\path[tedge] (h5) -- (z4);
+
 
 % edges output to output
-\path[tedge] (z1) edge node[above=1pt] {}  (y1) ;
-\path[tedge] (z2) edge node[above=1pt] {}  (y2) ;
-\path[tedge] (z3) edge node[above=1pt] {}  (y3) ;
-
-
-
+%\path[tedge] (z1) edge node[above=1pt] {}  (y1) ;
+%\path[tedge] (z2) edge node[above=1pt] {}  (y2) ;
+%\path[tedge] (z3) edge node[above=1pt] {}  (y3) ;
 
 \end{tikzpicture}
 } % scalebox

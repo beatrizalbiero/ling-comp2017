@@ -1,0 +1,39 @@
+\begin{tikzpicture}[auto]
+%image
+\node[textonly] (b) {b};
+\node[textonly, right = 30pt of b] (stop) {stop};
+\node[textonly, above = 10pt of stop] (int) {int};
+\node[textonly, below = 10pt of stop] (front) {front};
+\node[textonly, below = 10pt of front] (voiced) {voiced};
+
+\node[textonly, right = 30pt of stop] (e) {e};
+\node[textonly, right = 30pt of e] (vowel) {vowel};
+\node[textonly, above = 10pt of vowel] (low) {low};
+\node[textonly, below = 10pt of vowel] (front1) {front};
+\node[textonly, below = 10pt of front1] (short) {short};
+
+\node[textonly, right = 30pt of vowel] (g) {g};
+\node[textonly, right = 30pt of g] (int1) {int};
+\node[textonly, above = 10pt of int1] (stop1) {stop};
+\node[textonly, below = 10pt of int1] (back) {back};
+\node[textonly, below = 10pt of back] (voiced1) {voiced};
+
+
+%paths
+\path[tedge] (b) -- (int);
+\path[tedge] (b) -- (stop);
+\path[tedge] (b) -- (front);
+\path[tedge] (b) -- (voiced);
+
+\path[tedge] (e) -- (low);
+\path[tedge] (e) -- (vowel);
+\path[tedge] (e) -- (front1);
+\path[tedge] (e) -- (short);
+
+\path[tedge] (g) -- (int1);
+\path[tedge] (g) -- (stop1);
+\path[tedge] (g) -- (back);
+\path[tedge] (g) -- (voiced1);
+
+
+\end{tikzpicture}

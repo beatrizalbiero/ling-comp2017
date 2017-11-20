@@ -18,34 +18,25 @@
 \nocite{DeepLearningbook}
 \maketitle
 
-\section{Aprendizado de máquina}
+\section{Conceitos básicos}
 
-\begin{frame}{Introdução Aprendizado de Máquina}
-
-\begin{itemize}
-\item ML é realizar uma tarefa baseado em dados.
-\end{itemize}
-
-Fazer desenho das coisas abaixo!!!!!!!!!!!!!!!
-
-\begin{itemize}
-\item \textbf{Regressão} $x_1, \dots, x_N \rightarrow y_1, \dots, y_N$.
-
-\item \textbf{classificação} $x_1, \dots, x_N \rightarrow L_1, \dots, L_N$.
-\end{itemize}
+\begin{frame}{Introdução a aprendizado de máquina}
+\input{tikzfiles/MLintro}
 \end{frame}
 
 \begin{frame}{Regressão}
-colocar um plot falso mas verossivel !!!!!!!!!!!!!!!!!!!
+\begin{center}
+\includegraphics[scale=0.40]{images/house_prices.png}
+\end{center}
 \end{frame}
 
 
-\begin{frame}{Classificação}
+\begin{frame}{Classificação: Fashion MNIST \cite{xiao2017/online}}
 \input{tikzfiles/fashionMNIST}
 \end{frame}
 
 
-\begin{frame}{Aprendizado por Redes Neurais}
+\begin{frame}{Aprendizado por redes neurais}
 
 O que sabemos sobre o cérebro:
 \vspace{0.2cm}
@@ -61,6 +52,10 @@ O que sabemos sobre o cérebro:
 
 \includegraphics[width=.50\textwidth]{images/neuron.png}
 \includegraphics[width=.50\textwidth]{images/neuronsnetwork.png}
+\\
+\\
+\footnotesize{imagem retirada de \cite{metodosupera}}
+
 
 \end{frame}
 
@@ -75,9 +70,12 @@ Traduzindo para o modelo de redes neurais artificiais:
 \vspace{0.2cm}
 \item  Energia enviada: \alert{Output}
 \vspace{0.2cm}
+\item  Força entre uma conexão e outra: \alert{Peso ($\vect{\theta}$)}
+\vspace{0.2cm}
+
 \item Carga mínima: \alert{Threshold}
 \vspace{0.2cm}
-\item Uma função que recebe um input e emite um output mas leva em consideração um threshold mínimo: \visible<2->{\alert{Função de ativação}}
+\item Uma função que recebe um input e emite um output mas leva em consideração um threshold mínimo: \alert{Função de ativação}
 
 \end{itemize}
 
@@ -85,11 +83,11 @@ Traduzindo para o modelo de redes neurais artificiais:
 
 
 
-\begin{frame}{Função de ativação 1: sigmoid}
+\begin{frame}{Função de ativação: função sigmoid}
 \input{tikzfiles/Sigmoid}
 \end{frame}
 
-\begin{frame}{função de ativação 2: relu}
+\begin{frame}{função de ativação: ReLU (Rectified Linear Unit)}
 \input{tikzfiles/ReLU}
 \end{frame}
 
@@ -100,6 +98,27 @@ Traduzindo para o modelo de redes neurais artificiais:
 \begin{frame}[fragile]{Perceptron}
 \input{tikzfiles/perceptron}
 \end{frame}
+
+\begin{frame}[fragile]{Multi layer perceptron -- Feedforward neural network}
+\input{tikzfiles/MLP}
+\end{frame}
+
+\begin{frame}[fragile]{Multi layer perceptron -- Feedforward neural network}
+\input{tikzfiles/MLP2}
+\end{frame}
+
+\begin{frame}[fragile]{Multi layer perceptron -- Feedforward neural network}
+\input{tikzfiles/MLP3}
+\end{frame}
+
+\begin{frame}[fragile]{Multi layer perceptron -- Feedforward neural network}
+\input{tikzfiles/MLP4}
+\end{frame}
+
+\begin{frame}[fragile]{Deep feedforward network}
+\input{tikzfiles/DeepNetwork}
+\end{frame}
+
 
 \begin{frame}[fragile]{Features}
 \textbf{\alert{Features}} são características ou traços do objeto do aprendizado.
@@ -114,7 +133,7 @@ Traduzindo para o modelo de redes neurais artificiais:
 \input{tikzfiles/hidden_layer}
 \end{frame}
 
-\begin{frame}[fragile]{Rede Neural}
+\begin{frame}[fragile]{Feedforward neural network  (rede neural)}
 \input{tikzfiles/NN1}
 \end{frame}
 
@@ -122,7 +141,7 @@ Traduzindo para o modelo de redes neurais artificiais:
 \input{tikzfiles/CompGraph}
 \end{frame}
 
-\begin{frame}{Estrutura Completa}
+\begin{frame}{Treinamento}
 \input{tikzfiles/ideageral}
 \end{frame}
 
@@ -141,8 +160,9 @@ Traduzindo para o modelo de redes neurais artificiais:
 Problema:
 \begin{itemize}
 \item Aprendizado dos verbos "irregulares" no passado do inglês
-\visible<2->{\item Famílias de verbos irregulares:}
 \vspace{0.2cm}
+\visible<2->{\item Famílias de verbos irregulares:}
+\vspace{0.1cm}
 	\visible<3->{\begin{itemize}
 	\item “blow–blew, grow–grew, know–knew, throw–threw”
 	\item “bind–bound, find–found, grind–ground, wind–wound”
@@ -159,7 +179,7 @@ Problema:
 
 \begin{frame}[fragile]{On Learning the Past Tenses of English Verbs}
 
-Exemplo de entrada ($\vect{x}$) e saída ($\vect{y}$):
+Exemplo de entrada $\vect{x}$ e saída $\vect{y}$:
 
 \begin{itemize}
 \item [] $(\vect{x}^{(1)}, \vect{y}^{(1)}) =$ (begin, began).
@@ -199,8 +219,19 @@ $\vect{x}$ será uma combinação de traços (features) fonológicos.
 \end{frame}
 
 \begin{frame}[fragile]{Explicando as features}
- begin ---> beg, egi, gin ---> beg - int, vowel int (1 dimensão) ; bla bla bla (2 dimensão), ; bla bla bla (3 dimensão), ; bla bla bla (4 dimensão) 
+Exemplo: begin
+\vspace{1cm}
+\\
+\input{tikzfiles/lingfeatures}
 
+\end{frame}
+
+\begin{frame}[fragile]{Wickelfeatures}
+
+Wickelfeatures: Trigramas de features
+\vspace{0.4cm}
+\\Exemplo: begin
+\input{tikzfiles/wickelfeatures}
 \end{frame}
 
 
@@ -209,14 +240,13 @@ $\vect{x}$ será uma combinação de traços (features) fonológicos.
 \input{tikzfiles/phon_vector}
 \end{frame}
 
-% \begin{frame}[fragile]{Rede Neural com phonemas}
-% COMPLETAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-% \input{tikzfiles/NN2}
-% \end{frame}
-
 
 \begin{frame}[fragile]{On Learning the Past Tenses of English Verbs}
-explicar a saida do modelo e funcao de custo
+\input{tikzfiles/phon_output}
+\end{frame}
+
+\begin{frame}[fragile]{On Learning the Past Tenses of English Verbs}
+\input{tikzfiles/MSE}
 \end{frame}
 
 
@@ -225,8 +255,11 @@ Resultados (PROS):
 
 \begin{itemize}
 \visible<2->{\item Identificou padrões corretamente entre todos os 420 verbos do treinamento;}
+\vspace{0.4cm}
 \visible<3->{\item Taxa de acerto de 92\% para verbos regulares ausentes no treinamento;}
+\vspace{0.4cm}
 \visible<4->{\item Taxa de acerto de 84\% para verbos irregulares ausentes no treinamento;}
+\vspace{0.4cm}
 \visible<5->{\item U-shaped Development}
 \end{itemize}
 \end{frame}
@@ -235,8 +268,9 @@ Resultados (PROS):
 Resultados (CONS):
 
 \begin{itemize}
-\visible<2->{\item A rede falha ao tentar fazer predições com palavras que compartilham muitas features em comum; \\Exemplo: "algalgal" - Oykangand}
-\visible<3->{\item Muitos problemas como uma teoria da mente}
+\visible<2->{\item Falha ao tentar fazer predições com palavras que compartilham muitas features em comum; \\Exemplo: "algalgal" - Oykangand}
+\vspace{0.4cm}
+\visible<3->{\item Problemas como uma teoria da mente}
 \end{itemize}
 \end{frame}
 
@@ -270,16 +304,29 @@ P(x_1,x_2,x_3,x_4) = p
 \item text auto-completion
 \item correção de texto
 \item resposta automatizada
-\item summarização
+\item sumarização
 \end{itemize}
 
 
 \end{frame}
 
-\begin{frame}{revisao probabilidade}
-
-independencia, prop condicional
-
+\begin{frame}{Revisão de probabilidade}
+\large{
+\begin{itemize}
+\item \textbf{Probabilidade condicional} 
+\[
+P(A|B) = \frac{P(A,B)}{P(B)}
+\]
+\item \textbf{Independência} 
+\[
+P(A|B) = P(A)
+\]
+\item \textbf{Regra da cadeia} 
+\[
+P(A,B,C) = P(A)P(B|A)P(C|A,B)
+\]
+\end{itemize}
+}
 \end{frame}
 
 
@@ -292,7 +339,9 @@ P(x_1,x_2,x_3,x_4) = P(x_1)P(x_2\vert x_1)P(x_3\vert x_1x_2)P(x_4\vert x_1x_2x_3
 
 \vspace{0.3cm}
 
-Para simplificação fazemos a \textbf{suposição de Markov}, i.e., para um  $n$ específico assumimos que:
+Para simplificação fazemos uma \textbf{suposição de Markov}, i.e., para um  $n$ específico assumimos certas independências, assim cada palavra depende apenas das últimas $n-1$ palavras:
+
+
 
 \begin{equation*}
 P(x_1, \dots, x_T) = \prod_{t=1}^{T} P(x_t \vert x_1, \dots, x_{t-1}) = \prod_{t=1}^{T} P(x_{t} \vert x_{t - (n+1)}, \dots, x_{t-1})
@@ -360,15 +409,18 @@ P(x_{n} = \text{palavra}_{j^{*}} | x_{1}, \dots ,x_{n-1})
 para qualquer $(n-1)$ sequencia de palavras $x_{1}, \dots ,x_{n-1}$.
 \end{frame}
 
-\begin{frame}{Classificação com uma rede neural}
+\begin{frame}{Classificação com uma deep feedforward network}
 \input{tikzfiles/DFNclassification}
 \end{frame}
 
 \begin{frame}{Classificação com uma RNN}
 \input{tikzfiles/RNNclassification}
-exemplo com analise de sentimento,
-bonito mas burro ahahahahahahahahah
 \end{frame}
+
+\begin{frame}{Classificação com uma RNN}
+\input{tikzfiles/RNNsentiment}
+\end{frame}
+
 
 \begin{frame}[fragile]{RNNs}
 \input{tikzfiles/RNN1}
@@ -429,54 +481,43 @@ O dataset é uma coleção de pares $(\vect{x},\vect{y})$ em que $\vect{x}$ é u
 \input{tikzfiles/LanguageModelUnfolded}
 \end{frame}
 
-\begin{frame}{Vanishing}
+\begin{frame}{Dificuldades ao se treinar uma RNN}
 
-If we initialize $\vect{W}$ such that $||\vect{W}|| < 1$, the gradient for further time steps will be very small (\alert{vanishing problem}).
-
-\vspace{0.8cm}
- \url{https://www.youtube.com/watch?v=xAl8fu8myW0}
-
-
-\end{frame}
-
-\begin{frame}{Exploding}
-
-If $||\vect{W}|| > 1$, the gradient for further time steps will be larger and larger (\alert{exploding problem}).
-
-\vspace{0.8cm}
- \url{https://www.youtube.com/watch?v=dqW-jw5qKK8}
-
-
-\end{frame}
-
-
-\begin{frame}{The vanishing problem}
-
-The gradients from the steps closed to $\tau$ (the last step) have more influence than the ones very far back.\\
-
-This is bad for capturing \alert{long-term dependecies}.
-\end{frame}
-
-\begin{frame}{Possible solutions (hacks)}
 \begin{itemize}
-\item Clip gradients to a maximum value.
-\vspace{0.4cm}
-\item Choosing the right activation functions, e.g. ReLU.
-\vspace{0.4cm}
-\item Initialize weights to the identity matrix.
-\vspace{0.4cm}
-\item LSTM (Long Short-Term Memory), GRU (Gated Recurrent Unit), etc
+\item Quando nos inicializamos $\vect{W}$ de modo que $||\vect{W}|| < 1$, os gradientes dos passos mais antigos vão sumir (\alert{vanishing problem}).
+\vspace{0.2cm}
+\item E quando $||\vect{W}|| > 1$, os gradientes dos passos mais antigos vão explodir (\alert{exploding problem}).
+\vspace{0.2cm}
+\item Como resultado os gradientes dos passos mais próximos ao passo final vão ter mais influência do que os passos mais distantes. Isso é ruim para capturar \alert{longas dependências}.
+\vspace{0.2cm}
+\begin{itemize}
+\visible<2->{\item[] Eu fui morar na \textbf{frança}, com uma $\_\_\_\_\_\_\_$.} \visible<3->{\textbf{(francesa)}}
+\vspace{0.3cm}
+\visible<4->{\item[] Eu fui morar na \textbf{frança}, nesse tempo fiquei estudando a língua $\_\_\_\_\_\_\_$.} \visible<5->{\textbf{(francesa)}}
+\vspace{0.3cm}
+\visible<6->{\item[] Eu fui morar na \textbf{frança} durante três anos e cinco meses com dois amigos, o Carlos e o Lucas. Foi bem legal, nesse tempo fiquei estudando a língua $\_\_\_\_\_\_\_$.} \visible<7->{\textbf{(francesa)}}
+\end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{MytwitterBot: TrumpBot}
+\begin{frame}{Algumas soluções}
+\begin{itemize}
+\item GRU (Gated Recurrent Unit)
+\vspace{0.2cm}
+\item LSTM (Long Short-Term Memory).
+\end{itemize}
+\vspace{0.2cm}
+\input{tikzfiles/LSTM}
+\end{frame}
+
+\begin{frame}{Exemplo de aplicação: TrumpBot}
 \url{https://github.com/felipessalvatore/MyTwitterBot}
 \begin{center}
 \includegraphics[scale=0.24]{images/TrumpBot.png}
 \end{center}
 \end{frame}
 
-\begin{frame}{MytwitterBot: SakaBot}
+\begin{frame}{Exemplo de aplicação: SakaBot}
 \url{https://github.com/felipessalvatore/MyTwitterBot}
 \begin{center}
 \includegraphics[scale=0.24]{images/SakaBot.png}
@@ -485,7 +526,7 @@ This is bad for capturing \alert{long-term dependecies}.
 
 
 \begin{frame}{Tradução automatica}
-Colocar o exemplo do fabiano
+\input{tikzfiles/Translation}
 \end{frame}
 
 
@@ -516,13 +557,13 @@ Falando breve sobre perplexidade, maior menor
 
 \begin{frame}
 \begin{center}
-\textbf{\LARGE{Obrigado}}
+\textbf{\LARGE{Obrigado!}}
 \end{center}
 
 \vspace{0.3cm}
 
 \begin{center}
-\includegraphics[scale=0.2]{images/gliclogo.jpeg}
+\includegraphics[scale=0.15]{images/gliclogo.pdf}
 \end{center}
 \url{https://glicusp.wordpress.com/}
 
