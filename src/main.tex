@@ -26,7 +26,13 @@
 
 \begin{frame}{Regressão}
 \begin{center}
-\includegraphics[scale=0.40]{images/house_prices.png}
+\includegraphics[scale=0.40]{images/house_prices1.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Regressão}
+\begin{center}
+\includegraphics[scale=0.40]{images/house_prices2.png}
 \end{center}
 \end{frame}
 
@@ -76,14 +82,11 @@ Traduzindo para o modelo de redes neurais artificiais:
 \item Carga mínima: \alert{Threshold}
 \vspace{0.2cm}
 \item Uma função que recebe um input e emite um output mas leva em consideração um threshold mínimo: \alert{Função de ativação}
-
 \end{itemize}
-
 \end{frame}
 
 
-
-\begin{frame}{Função de ativação: função sigmoid}
+\begin{frame}{Função de ativação: função sigmoide}
 \input{tikzfiles/Sigmoid}
 \end{frame}
 
@@ -132,6 +135,15 @@ Traduzindo para o modelo de redes neurais artificiais:
 
 \input{tikzfiles/hidden_layer}
 \end{frame}
+
+\begin{frame}[fragile]{Classificação de imagens}
+\begin{figure}
+\centering
+\includegraphics[width=1.0\linewidth]{images/wolf.png}
+\end{figure}
+\footnotesize{imagem retirada de \cite{Ribeiro:2016:WIT:2939672.2939778}}
+\end{frame}
+
 
 \begin{frame}[fragile]{Feedforward neural network  (rede neural)}
 \input{tikzfiles/NN1}
@@ -211,7 +223,7 @@ $\vect{x}$ será uma combinação de traços (features) fonológicos.
 \multicolumn{1}{c}{} & Nasal & m & - & n & - & N & - \\ \hline
 \multirow{2}{*}{Cont} & Fric & v/D & f/T & z & s & Z/j & S/C \\ \cline{2-8} 
  & Liq/SV & w/l & - & r & - & y & h \\ \hline
- \multirow{2}{*}{Vowel} & High & E & i & O & - & U & u \\ \cline{2-8} 
+ \multirow{2}{*}{Vowel} & High & E & i & O & $\hat{}$ & U & u \\ \cline{2-8} 
  & Low & A & e & I & a/$\alpha$ & W & o \\ \hline
 \end{tabular}
 \end{table}
@@ -219,7 +231,7 @@ $\vect{x}$ será uma combinação de traços (features) fonológicos.
 \end{frame}
 
 \begin{frame}[fragile]{Explicando as features}
-Exemplo: begin
+Exemplo: begin (bEgiN)
 \vspace{1cm}
 \\
 \input{tikzfiles/lingfeatures}
@@ -256,11 +268,11 @@ Resultados (PROS):
 \begin{itemize}
 \visible<2->{\item Identificou padrões corretamente entre todos os 420 verbos do treinamento;}
 \vspace{0.4cm}
-\visible<3->{\item Taxa de acerto de 92\% para verbos regulares ausentes no treinamento;}
+\visible<3->{\item Taxa de acerto de \textbf{92\%} para verbos regulares ausentes no treinamento;}
 \vspace{0.4cm}
-\visible<4->{\item Taxa de acerto de 84\% para verbos irregulares ausentes no treinamento;}
+\visible<4->{\item Taxa de acerto de \textbf{84\%} para verbos irregulares ausentes no treinamento;}
 \vspace{0.4cm}
-\visible<5->{\item U-shaped Development}
+\visible<5->{\item \textbf{U-shaped Development}}
 \end{itemize}
 \end{frame}
 

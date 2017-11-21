@@ -21,7 +21,7 @@
 \node[op, right=40pt of z1] (y1) {$\hat{y}_{1}$};
 \node[op, right=40pt of z2] (y2) {$\hat{y}_{2}$};
 
-\node[textonly, above right=38pt and -86pt of h1] (f) {$\vect{\hat{y}} = f(\vect{x};\vect{\theta})= g_2(\vect{V}\vect{h})= g_2(\vect{V}g_1(\vect{W}\vect{x}))$};
+\node[textonly, above right=38pt and -86pt of h1] (f) {$\vect{\hat{y}} = f(\vect{x};\vect{\theta})= g_2(\vect{U}\vect{h})= g_2(\vect{U}g_1(\vect{W}\vect{x}))$};
 
 
 % edges input to hidden1
@@ -38,11 +38,11 @@
 \path[tedge] (v2) edge node[above=1pt] {{\Large$g_1$}}  (h2) ;
 
 % edges input to hidden2
-\path[tedge] (h1) edge node[above=1.8pt] {$\vect{V}_{1,1}$} (z1);
-\path[tedge] (h2) edge node[below left=-4.2pt and 4.5pt] {$\vect{V}_{2,1}$} (z1);
+\path[tedge] (h1) edge node[above=1.8pt] {$\vect{U}_{1,1}$} (z1);
+\path[tedge] (h2) edge node[below left=-4.2pt and 4.5pt] {$\vect{U}_{2,1}$} (z1);
 
-\path[tedge] (h1) edge node[above=1.8pt] {$\vect{V}_{1,2}$} (z2);
-\path[tedge] (h2) edge node[above=0.2pt] {$\vect{V}_{2,2}$} (z2);
+\path[tedge] (h1) edge node[above=1.8pt] {$\vect{U}_{1,2}$} (z2);
+\path[tedge] (h2) edge node[above=0.2pt] {$\vect{U}_{2,2}$} (z2);
 
 % edges activation2
 \path[tedge] (z1) edge node[above=1pt] {{\Large$g_2$}}  (y1) ;
