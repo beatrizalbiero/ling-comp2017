@@ -1,17 +1,17 @@
 \begin{figure}[ht!]
 \centering
 
-\scalebox{1.15}{
+\scalebox{1.12}{
 \begin{tikzpicture}[auto]
 
-\node (beg) {beg};
-\node[right=2.7cm of beg] (egi) {egi};
-\node[right=2.7cm of egi] (gin) {gin};
+\node (beg) {bEg};
+\node[right=2.4cm of beg] (egi) {Egi};
+\node[right=2.4cm of egi] (gin) {giN};
 
-\visible<2->{\node[below = 0.2cm of beg] (fbeg){$\footnotesize{\begin{bmatrix} int,low,int\\int, vowel,int\\int,front,int\\int,short,int\\stop,low,stop\\stop,vowel,stop\\stop,front,stop\\stop,short,stop\\\vdots\\voiced,front,voiced\\voiced,short,voiced\end{bmatrix}}$};};
+\visible<2->{\node[below = 0.2cm of beg] (fbeg){$\footnotesize{\begin{bmatrix} int,high,int\\int, vowel,int\\int,front,int\\int,long,int\\stop,high,stop\\stop,vowel,stop\\stop,front,stop\\stop,long,stop\\\vdots\\voiced,front,voiced\\voiced,long,voiced\end{bmatrix}}$};};
 
- \visible<3->{\node[below = 0.2cm of egi] (fegi){$\footnotesize{\begin{bmatrix} vowel,int,vowel\\vowel,stop,vowel\\vowel,back,vowel\\vowel,voiced,vowel\\low,int,high\\low,stop,high\\low,back,high\\low,voiced,high\\\vdots\\short,int,short\\short,voiced,short\end{bmatrix}}$};
-\node[below = 0.2cm of gin] (gin){$\footnotesize{\begin{bmatrix} int,\dots\\\vdots\end{bmatrix}}$};};
+ \visible<3->{\node[below = 0.2cm of egi] (fegi){$\footnotesize{\begin{bmatrix} vowel,int,vowel\\vowel,stop,vowel\\vowel,back,vowel\\vowel,voiced,vowel\\high,int,high\\high,stop,high\\high,back,high\\high,voiced,high\\\vdots\\short,int,short\\short,voiced,short\end{bmatrix}}$};
+\node[below = 0.2cm of gin] (gin){$\footnotesize{\begin{bmatrix} int,vowel,int\\int,high,int\\int,front,int\\int,short,int\\stop,vowel,nasal\\stop,high,nasal\\stop,front,nasal\\stop,short,nasal\\\vdots\\back,vowel,back\\back,high,back\end{bmatrix}}$};};
 
 
 \end{tikzpicture}
