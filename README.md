@@ -1,5 +1,5 @@
 # ling-comp2017
-I create this presentation together with [Beatriz Albiero](https://github.com/beatrizalbiero) for the computational linguistics workshop at USP, 2017
+I created this presentation together with [Felipe Salvatore](https://github.com/felipessalvatore) for the computational linguistics workshop at USP, 2017
 
 ![alt text](images/cc-logo.png "CC")
 
